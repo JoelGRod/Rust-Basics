@@ -1,4 +1,4 @@
-# Rust Basics Project
+# Rust Basic Project
 * This is a basic project made with Rust language
 * Modules, structs, enums, traits
 * It has been created for educational reasons
