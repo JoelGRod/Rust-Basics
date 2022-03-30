@@ -21,7 +21,7 @@ mod collections {
 
 use crate::lights::traits::light;
 
-use crate::collections::vector;
+use crate::collections::{vector, string, hashmap};
 
 fn main() {
     let traffic_light = traffic::TrafficLight::new();
@@ -29,8 +29,11 @@ fn main() {
     print_state(&traffic_light);
     print_state(&house_light);
 
-    println!("Vectors");
+    println!("---------- Vectors ----------");
     vector::vector_examples();
+
+    println!("---------- Strings ----------");
+    string::string_examples();
 
 }
 
