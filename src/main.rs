@@ -13,13 +13,25 @@ mod lights {
     }
 }
 
+mod collections {
+    pub mod vector;
+    pub mod string;
+    pub mod hashmap;
+}
+
 use crate::lights::traits::light;
+
+use crate::collections::vector;
 
 fn main() {
     let traffic_light = traffic::TrafficLight::new();
     let house_light = home::HouseLight::new();
     print_state(&traffic_light);
     print_state(&house_light);
+
+    println!("Vectors");
+    vector::vector_examples();
+
 }
 
 fn print_state(light: &impl light::Light) {
