@@ -29,7 +29,7 @@ pub fn string_examples() {
     let concatenated: String = lost_ownership + &string_2 + &string_3;
     println!("+ operator: {}", concatenated);
 
-    // format! macro (all references, ownership remains)
+    // format! macro (references, ownership remains)
     let format_string_1: String = "Hello".to_owned();
     let format_string_2: String = "World!!".to_owned();
     let format_string_3: String = "Friends".to_owned();
@@ -43,19 +43,12 @@ pub fn string_examples() {
 
     /* ---------- Iterating over Strings ---------- */ 
     // Chars
-    for c in formated_string.chars() {
+    for c in slice_example.chars() {
         println!("{}", c);
     }
 
     // Bytes
-    for b in formated_string.bytes() {
+    for b in slice_example.bytes() {
         println!("{}", b);
     }
-
-
-
-
-
-
-
 }
