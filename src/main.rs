@@ -34,6 +34,9 @@ fn main() {
 
     println!("---------- Strings ----------");
     string::string_examples();
+    
+    println!("---------- HashMaps ----------");
+    hashmap::hashmap_examples();
 
 }
 
