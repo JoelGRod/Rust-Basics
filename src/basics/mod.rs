@@ -1,6 +1,6 @@
 pub mod structs {
     pub mod app {
-        pub mod lights;
+        pub mod lights_main;
     }
     mod domain {
         pub mod structs {
@@ -19,7 +19,7 @@ pub mod structs {
 
 pub mod collections {
     pub mod app {
-        pub mod collections;
+        pub mod collections_main;
     }
     // pub mod domain {}
     mod infrastructure {
@@ -27,5 +27,11 @@ pub mod collections {
         pub mod hashmap;
         pub mod string;
         pub mod vector;
+    }
+}
+
+pub mod errors {
+    pub mod app {
+        pub mod errors_main;
     }
 }
