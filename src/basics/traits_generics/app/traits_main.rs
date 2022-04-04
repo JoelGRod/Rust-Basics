@@ -1,13 +1,22 @@
 use crate::basics::traits_generics::domain::{
     structs::{
         news_article::NewsArticle, 
-        tweet::Tweet
+        tweet::Tweet, 
+        generics::Point
     }, 
     traits::summary::Summary
 };
 
 pub fn traits_examples() {
     println!("---------- Generics ----------");
+    let p1: Point<i32, f32> = Point {x: 5, y: 10.8};
+    let p2: Point<&str, char> = Point {x: "hello", y: 'c'};
+    let p3: Point<f32, f32> = Point { x: 5.5, y: 8.8 };
+
+    let mix_p4: Point<i32, char> = p1.mixup(p2);
+
+    println!("mix_p4.x = {}, mix_p4.y = {}", mix_p4.x, mix_p4.y);
+    println!("Distance from origin: {}", p3.distance_from_origin());
 
     println!("----------- Traits -----------");
     let new_article: NewsArticle = NewsArticle { 

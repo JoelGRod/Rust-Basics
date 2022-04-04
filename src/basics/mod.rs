@@ -44,10 +44,13 @@ pub mod traits_generics {
         pub mod structs {
             pub mod news_article;
             pub mod tweet;
+            pub mod generics;
         }
         pub mod traits {
             pub mod summary;
         }
     }
-    // mod infrastructure {}
+    mod infrastructure {
+        pub mod generics;
+    }
 }
