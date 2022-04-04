@@ -35,3 +35,19 @@ pub mod errors {
         pub mod errors_main;
     }
 }
+
+pub mod traits_generics {
+    pub mod app {
+        pub mod traits_main;
+    }
+    mod domain {
+        pub mod structs {
+            pub mod news_article;
+            pub mod tweet;
+        }
+        pub mod traits {
+            pub mod summary;
+        }
+    }
+    // mod infrastructure {}
+}
