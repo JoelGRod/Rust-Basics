@@ -1,5 +1,6 @@
 use crate::basics::traits_generics::domain::traits::summary::Summary;
 
+/* ------------------------------------------------------------ */
 /* 
     1 - Traits as parameters
     Restricting type parameter 'T'
@@ -42,8 +43,10 @@ pub fn notify_2(item1: &impl Summary, item2: &impl Summary) {
 //           U: Clone + Debug
 // {}
 
-
-/* 2 - Returning items that implements traits */
+/* ------------------------------------------------------------ */
+/* 
+    2 - Returning items that implements traits 
+*/
 
 // fn returns_summarizable() -> impl Summary {
 //     Tweet {
@@ -56,9 +59,19 @@ pub fn notify_2(item1: &impl Summary, item2: &impl Summary) {
 //     }
 // }
 
-/* 3 - Using Trait Bounds to Conditionally Implement Methods - See Structs - Generics example 2 */
+/* ------------------------------------------------------------ */
+/* 
+    3 - Using Trait Bounds to Conditionally Implement Methods
+    See Structs
+    Generics example 2 
+*/
 
-/* 4 - Implement a trait for any type that implements another trait - Important!! */
+/* ------------------------------------------------------------ */
+/* 
+    4 - Implement a trait for any type that implements another 
+    trait - Important!! 
+*/
+
 // impl<T: Display> ToString for T {
 //      --snip--
 // }
