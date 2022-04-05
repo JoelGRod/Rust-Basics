@@ -45,6 +45,7 @@ pub mod traits_generics {
             pub mod news_article;
             pub mod tweet;
             pub mod generics;
+            pub mod lifetimes;
         }
         pub mod traits {
             pub mod summary;
@@ -52,5 +53,6 @@ pub mod traits_generics {
     }
     mod infrastructure {
         pub mod generics;
+        pub mod lifetimes;
     }
 }

@@ -2,10 +2,11 @@ use crate::basics::traits_generics::{domain::{
     structs::{
         news_article::NewsArticle, 
         tweet::Tweet, 
-        generics::{Point, Pair}
+        generics::{Point, Pair},
+        lifetimes::ImportantExcerpt,
     }, 
     traits::summary::Summary
-}, infrastructure::generics };
+}, infrastructure::{generics, lifetimes} };
 
 pub fn traits_examples() {
     println!("---------- Generics ----------");
@@ -58,5 +59,21 @@ pub fn traits_examples() {
     generics::notify(&new_article, &tweet);
     generics::notify_2(&new_article, &tweet);
 
+    println!("---------- Lifetimes ----------");
+    let string1: String = "My first string".to_owned();
+    let result;
+    {
+        let string2: String = "My second string".to_owned();
+        result = lifetimes::longest(string1.as_str(), string2.as_str());
+        println!("{}", result);
+    }
+
+    let novel: String = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence: &str = novel.split('.').next().expect("Could not find a '.'");
+    let i: ImportantExcerpt = ImportantExcerpt {
+        part: first_sentence,
+    };
+    i.print_part();
+    println!("{}", novel);
 
 }
