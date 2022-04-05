@@ -1,11 +1,11 @@
-use crate::basics::traits_generics::domain::{
+use crate::basics::traits_generics::{domain::{
     structs::{
         news_article::NewsArticle, 
         tweet::Tweet, 
-        generics::Point
+        generics::{Point, Pair}
     }, 
     traits::summary::Summary
-};
+}, infrastructure::generics };
 
 pub fn traits_examples() {
     println!("---------- Generics ----------");
@@ -15,8 +15,14 @@ pub fn traits_examples() {
 
     let mix_p4: Point<i32, char> = p1.mixup(p2);
 
+    let pair: Pair<i32> = Pair::new(32, 56);
+    pair.cmp_display();
+
     println!("mix_p4.x = {}, mix_p4.y = {}", mix_p4.x, mix_p4.y);
     println!("Distance from origin: {}", p3.distance_from_origin());
+
+    let largest_number: i32 = generics::largest(&[1,2,3,4,5,6,7,0,89,34,123,345,67,44,56]);
+    println!("Largest number: {}", largest_number);
 
     println!("----------- Traits -----------");
     let new_article: NewsArticle = NewsArticle { 
@@ -47,6 +53,10 @@ pub fn traits_examples() {
 
     println!("1 new Tweet: {}", tweet.summarize());
     println!("{}", tweet.summarize_author());
+
+    println!("---------- Generics Pt.2 ----------");
+    generics::notify(&new_article, &tweet);
+    generics::notify_2(&new_article, &tweet);
 
 
 }

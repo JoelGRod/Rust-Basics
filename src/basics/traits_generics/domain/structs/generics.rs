@@ -1,3 +1,6 @@
+use std::fmt::Display;
+
+// Example Struct I
 pub struct Point<T, U> {
     pub x: T,
     pub y: U,
@@ -20,5 +23,27 @@ impl<T, U> Point<T, U> {
 impl Point<f32, f32> {
     pub fn distance_from_origin(&self) -> f32 {
         (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
+// Example Struct II
+pub struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    pub fn new(x: T, y: T) -> Self {
+        Self { x, y }
+    }
+}
+
+impl<T: Display + PartialOrd> Pair<T> {
+    pub fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("The largest member is x = {}", self.x);
+        } else {
+            println!("The largest member is y = {}", self.y);
+        }
     }
 }
