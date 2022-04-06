@@ -70,9 +70,7 @@ pub fn traits_examples() {
 
     let novel: String = String::from("Call me Ishmael. Some years ago...");
     let first_sentence: &str = novel.split('.').next().expect("Could not find a '.'");
-    let i: ImportantExcerpt = ImportantExcerpt {
-        part: first_sentence,
-    };
+    let i: ImportantExcerpt = ImportantExcerpt::new(first_sentence);
     i.print_part();
     println!("{}", novel);
 

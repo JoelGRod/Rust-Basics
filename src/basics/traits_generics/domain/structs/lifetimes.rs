@@ -1,8 +1,12 @@
 pub struct ImportantExcerpt<'a> {
-    pub part: &'a str,
+    part: &'a str,
 }
 
-impl ImportantExcerpt<'_> {
+impl<'a> ImportantExcerpt<'a> {
+    pub fn new(part: &'a str) -> Self {
+        Self { part }
+    }
+
     pub fn print_part(&self) {
         println!("{}", self.part);
     }
