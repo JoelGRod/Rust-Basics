@@ -1,4 +1,4 @@
-use crate::basics::collections::infrastructure::{vector, string, hashmap};
+use crate::basics::main::collections::infrastructure::{vector, string, hashmap};
 
 pub fn collections() {
     println!("---------- Vectors ----------");

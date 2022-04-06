@@ -1,4 +1,4 @@
-use crate::basics::traits_generics::domain::traits::summary::Summary;
+use crate::basics::main::traits_generics::domain::traits::summary::Summary;
 
 pub struct Tweet {
     pub username: String,

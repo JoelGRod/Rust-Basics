@@ -2,7 +2,7 @@ pub mod structs {
     pub mod app {
         pub mod lights_main;
     }
-    mod domain {
+    pub mod domain {
         pub mod structs {
             pub mod house_light;
             pub mod traffic_light;

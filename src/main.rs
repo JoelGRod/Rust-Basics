@@ -1,8 +1,12 @@
 // Gral App Modules
-mod basics;
+mod basics {
+    pub mod main;
+    #[cfg(test)]
+    pub mod tests;
+}
 
 // Importa
-use crate::basics::{
+use crate::basics::main::{
     structs::app::lights_main as structs, 
     collections::app::collections_main as collections,
     errors::app::errors_main as errors,

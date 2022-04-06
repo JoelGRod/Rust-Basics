@@ -1,4 +1,4 @@
-use crate::basics::traits_generics::{domain::{
+use crate::basics::main::traits_generics::{domain::{
     structs::{
         news_article::NewsArticle, 
         tweet::Tweet, 
