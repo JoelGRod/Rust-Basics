@@ -1,8 +1,14 @@
 mod structs {
     mod domain {
         mod structs {
-            pub mod rectangle;
+            mod rectangle;
+            mod guess;
         }
     }
     // mod infrastructure {}
+}
+mod functions {
+    mod infrastructure {
+        mod helpers;
+    }
 }

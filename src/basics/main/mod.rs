@@ -1,3 +1,9 @@
+pub mod functions {
+    pub mod infrastructure {
+        pub mod helpers;
+    }
+}
+
 pub mod structs {
     pub mod app {
         pub mod lights_main;
@@ -7,6 +13,7 @@ pub mod structs {
             pub mod house_light;
             pub mod traffic_light;
             pub mod rectangle;
+            pub mod guess;
         }
         mod enums {
             pub mod traffic_light_color;
