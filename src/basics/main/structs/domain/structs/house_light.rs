@@ -1,5 +1,5 @@
 use std::fmt::Display;
-use crate::basics::structs::domain::traits::light;
+use crate::basics::main::structs::domain::traits::light;
 
 #[derive(Debug)]
 pub struct HouseLight {

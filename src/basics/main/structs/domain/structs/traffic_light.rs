@@ -1,5 +1,5 @@
-use crate::basics::structs::domain::enums::traffic_light_color as color;
-use crate::basics::structs::domain::traits::light;
+use crate::basics::main::structs::domain::enums::traffic_light_color as color;
+use crate::basics::main::structs::domain::traits::light;
 
 #[derive(Debug)]
 pub struct TrafficLight {

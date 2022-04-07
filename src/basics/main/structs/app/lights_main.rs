@@ -1,5 +1,5 @@
-use crate::basics::structs::domain::structs::{traffic_light as traffic, house_light as home};
-use crate::basics::structs::domain::traits::light;
+use crate::basics::main::structs::domain::structs::{traffic_light as traffic, house_light as home};
+use crate::basics::main::structs::domain::traits::light::{self};
 
 pub fn lights() {
     let traffic_light = traffic::TrafficLight::new();

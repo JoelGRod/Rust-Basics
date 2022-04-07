@@ -2,7 +2,7 @@ pub mod structs {
     pub mod app {
         pub mod lights_main;
     }
-    mod domain {
+    pub mod domain {
         pub mod structs {
             pub mod house_light;
             pub mod traffic_light;
@@ -33,5 +33,26 @@ pub mod collections {
 pub mod errors {
     pub mod app {
         pub mod errors_main;
+    }
+}
+
+pub mod traits_generics {
+    pub mod app {
+        pub mod traits_main;
+    }
+    mod domain {
+        pub mod structs {
+            pub mod news_article;
+            pub mod tweet;
+            pub mod generics;
+            pub mod lifetimes;
+        }
+        pub mod traits {
+            pub mod summary;
+        }
+    }
+    mod infrastructure {
+        pub mod generics;
+        pub mod lifetimes;
     }
 }
