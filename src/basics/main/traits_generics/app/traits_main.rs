@@ -8,6 +8,15 @@ use crate::basics::main::traits_generics::{domain::{
     traits::summary::Summary
 }, infrastructure::{generics, lifetimes} };
 
+/*
+    Note: Trait bounds
+    Trait bounds let us to:
+        1 - Limit the types you can pass to a generic based on the traits implemented
+        2 - Limit the access to a struct method based on the traits implemented by the 
+            elements used for build the struct instance
+        3 - Implement a global trait in all of the types that implements an specific trait
+*/
+
 pub fn traits_examples() {
     println!("---------- Generics ----------");
     let p1: Point<i32, f32> = Point {x: 5, y: 10.8};

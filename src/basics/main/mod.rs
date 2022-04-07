@@ -6,6 +6,7 @@ pub mod structs {
         pub mod structs {
             pub mod house_light;
             pub mod traffic_light;
+            pub mod rectangle;
         }
         mod enums {
             pub mod traffic_light_color;
