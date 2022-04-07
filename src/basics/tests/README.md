@@ -8,3 +8,6 @@
 * #[cfg(test)] - Defines a test module
 * #[test] - Put this before every test function
 * #[should_panic(expected="")] - This attribute makes a test pass if the code inside the function panics; the test will fail if the code inside the function doesn’t panic.
+
+# Returns
+* Result<T, E> -> Useful for fn that returns a Result<T, E>

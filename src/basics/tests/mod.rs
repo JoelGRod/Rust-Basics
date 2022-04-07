@@ -12,3 +12,11 @@ mod functions {
         mod helpers;
     }
 }
+mod examples {
+    mod it_works;
+}
+mod errors {
+    mod app {
+        mod errors_main;
+    }
+}

@@ -13,7 +13,7 @@ use crate::basics::main::traits_generics::{domain::{
     Trait bounds let us to:
         1 - Limit the types you can pass to a generic based on the traits implemented
         2 - Limit the access to a struct method based on the traits implemented by the 
-            elements used for build the struct instance
+            types used for build the struct instance
         3 - Implement a global trait in all of the types that implements an specific trait
 */
 
