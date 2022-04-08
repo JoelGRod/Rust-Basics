@@ -64,3 +64,7 @@ pub mod traits_generics {
         pub mod lifetimes;
     }
 }
+
+pub mod tests_examples {
+    pub mod it_works;
+}
