@@ -1,5 +1,6 @@
 // Gral App Modules
 mod basics;
+mod exercises;
 
 // Importa
 use crate::basics::{
