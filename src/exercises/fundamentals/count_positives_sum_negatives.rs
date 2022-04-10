@@ -15,8 +15,8 @@
 fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
     let mut results: Vec<i32> = vec![0, 0];
 
-    for num in input {
-        if num > 0 {
+    for num in &input {
+        if num > &0 {
             results[0] += 1
         } else {
             results[1] += num
