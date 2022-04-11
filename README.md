@@ -9,3 +9,6 @@
 
 ## Tests
 * For testing execute -> cargo test
+
+## Console App - grep
+* cargo run query filename

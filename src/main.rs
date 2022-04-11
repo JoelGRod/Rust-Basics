@@ -1,5 +1,3 @@
-use std::env;
-
 // Entry Point
 fn main() {
     // Basics
@@ -9,6 +7,5 @@ fn main() {
     // basics_rust::traits_example();
 
     // minigrep
-    let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
+    basics_rust::console_app();
 }
