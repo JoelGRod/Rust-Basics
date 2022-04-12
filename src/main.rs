@@ -1,4 +1,4 @@
-use std::env;
+use std::{env, process};
 
 // Entry Point
 /*
@@ -17,7 +17,10 @@ fn main() {
 
     // minigrep
     let args: Vec<String> = env::args().collect();
-    let config: Config = Config::new(&args).unwrap();
+    let config: Config = Config::new(&args).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {}", err);
+        process::exit(1);
+    });
     basics_rust::console_app(&config.query, &config.filename);
 }
 
