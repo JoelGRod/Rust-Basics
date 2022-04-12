@@ -18,12 +18,12 @@ pub fn errors_examples() {
         code, the compiler will tell us that the types don’t match. 
         The error message will then tell us what the type of f is.
      */
-    let f: Result<File, std::io::Error> = File::open("src/output/hello.txt");
+    let f: Result<File, std::io::Error> = File::open("src/shared/output/hello.txt");
 
     // let f = match f {
     //     Ok(file) => file,
     //     Err(error) => match error.kind() {
-    //         ErrorKind::NotFound => match File::create("src/output/hello.txt") {
+    //         ErrorKind::NotFound => match File::create("src/shared/output/hello.txt") {
     //             Ok(file) => file,
     //             Err(error) => panic!("Error creating the file {:?}", error)
     //         },
@@ -34,9 +34,9 @@ pub fn errors_examples() {
     // Alternatives to match for handling errors
 
     // unwrap_or_else(error) -> Cleaner
-    let f = File::open("src/output/hello.txt").unwrap_or_else(|error| {
+    let f = File::open("src/shared/output/hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
-            File::create("src/output/hello.txt").unwrap_or_else(|error| {
+            File::create("src/shared/output/hello.txt").unwrap_or_else(|error| {
                 panic!("Problem creating the file: {:?}", error);
             })
         } else {
@@ -45,10 +45,10 @@ pub fn errors_examples() {
     });
 
     // unwrap() -> Returns ok or panic!
-    // let f = File::open("src/output/hello.txt").unwrap();
+    // let f = File::open("src/shared/output/hello.txt").unwrap();
 
     // expect("some error") -> Same as above but with custom error message
-    // let f = File::open("src/output/hello.txt").expect("Problem opening the file");
+    // let f = File::open("src/shared/output/hello.txt").expect("Problem opening the file");
 }
 
 
@@ -86,7 +86,7 @@ pub fn errors_examples() {
 
 // Same as above even shorter
 fn read_username_from_file() -> Result<String, io::Error> {
-    fs::read_to_string("src/output/hello.txt")
+    fs::read_to_string("src/shared/output/hello.txt")
 }
 
 

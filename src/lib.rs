@@ -10,7 +10,7 @@ use crate::basics::{
     errors::app::errors_main as errors,
     traits_generics::app::traits_main as traits
 };
-use std::{env, fs::File, io::ErrorKind};
+use std::{env, fs};
 
 // Basics
 pub fn structs_example() -> bool {
@@ -34,14 +34,16 @@ pub fn traits_example() -> bool {
 }
 
 // Console App - Grep
-pub fn console_app() {
-    let args: Vec<String> = env::args().collect();
-    
-    let query: &str = args.get(1).unwrap_or_else(|| { "test" });
-    let filename: &str = args.get(2).unwrap_or_else(|| { "hello.txt" });
+pub fn console_app(query: &str, filename: &str) {
+    let path: String = "src/shared/files/".to_owned();
 
     println!("Query: {}", query);
     println!("Filename: {}", filename);
+
+    let contents: String = fs::read_to_string(path + filename)
+        .expect("Something went wrong reading the file");
+    
+    println!("With text:\n{}", contents);
 }
 
 // Advanced
