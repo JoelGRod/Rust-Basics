@@ -1,12 +1,17 @@
 use std::{env, process};
+use basics_rust::console_app::domain::config::Config;
 
-// Entry Point
 /*
+    Entry Point -> main()
     main function responsibilities:
-        Calling the command line parsing logic with the argument values
-        Setting up any other configuration
-        Calling a run function in lib.rs
-        Handling the error if run returns an error
+        * Calling the command line parsing logic with the argument values.
+        * Setting up any other configuration.
+        * Handling errors from the configuration process.
+        * Calling a run function in lib.rs.
+        * Handling the error if run returns an error.
+        * * We’ll extract a function named run (in lib.rs) that will hold 
+        all the logic currently in the main function that isn’t involved 
+        with setting up configuration or handling errors.
 */
 fn main() {
     // Basics
@@ -21,22 +26,8 @@ fn main() {
         println!("Problem parsing arguments: {}", err);
         process::exit(1);
     });
-    basics_rust::console_app(&config.query, &config.filename);
-}
-
-struct Config {
-    query: String,
-    filename: String,
-}
-
-impl Config {
-    fn new(args: &[String]) -> Result<Self, &'static str> {
-        if args.len() < 3 {
-            return Err("Not enough arguments")
-        }
-        let query = args[1].clone();
-        let filename: String = args[2].clone();
-
-        Ok(Self {query, filename})
-    }
+    if let Err(e) = basics_rust::run_console_app(config) {
+        println!("Application Error: {}", e);
+        process::exit(1);
+    };
 }

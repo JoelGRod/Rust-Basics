@@ -1,16 +1,21 @@
 // Lib Modules
 mod basics;
 mod exercises;
-mod console_app;
+pub mod console_app;
 
-// Imports
+// Imports: Basics Domain
 use crate::basics::{
     structs::app::lights_main as structs, 
     collections::app::collections_main as collections,
     errors::app::errors_main as errors,
     traits_generics::app::traits_main as traits
 };
-use std::{env, fs};
+// Imports: Console App
+use std::{
+    fs, 
+    error::Error
+};
+use crate::console_app::domain::config::Config;
 
 // Basics
 pub fn structs_example() -> bool {
@@ -34,16 +39,17 @@ pub fn traits_example() -> bool {
 }
 
 // Console App - Grep
-pub fn console_app(query: &str, filename: &str) {
+pub fn run_console_app(config: Config) -> Result<(), Box<dyn Error>> {
     let path: String = "src/shared/files/".to_owned();
 
-    println!("Query: {}", query);
-    println!("Filename: {}", filename);
+    println!("Query: {}", config.query);
+    println!("Filename: {}", config.filename);
 
-    let contents: String = fs::read_to_string(path + filename)
-        .expect("Something went wrong reading the file");
+    let contents: String = fs::read_to_string(path + &config.filename)?;
+
+    println!("With Text: {}", contents);
     
-    println!("With text:\n{}", contents);
+    Ok(())
 }
 
 // Advanced
