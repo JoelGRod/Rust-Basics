@@ -15,7 +15,10 @@ use std::{
     fs, 
     error::Error
 };
-use crate::console_app::domain::config::Config;
+use crate::console_app::{
+    domain::config::Config,
+    infrastructure::helpers
+};
 
 // Basics
 pub fn structs_example() -> bool {
@@ -42,13 +45,17 @@ pub fn traits_example() -> bool {
 pub fn run_console_app(config: Config) -> Result<(), Box<dyn Error>> {
     let path: String = "src/shared/files/".to_owned();
 
-    println!("Query: {}", config.query);
-    println!("Filename: {}", config.filename);
+    // println!("Query: {}", config.query);
+    // println!("Filename: {}", config.filename);
 
     let contents: String = fs::read_to_string(path + &config.filename)?;
 
-    println!("With Text: {}", contents);
-    
+    // println!("With Text: {}", contents);
+
+    for line in helpers::search(&config.query, &contents) {
+        println!("{}", line);
+    }
+
     Ok(())
 }
 
