@@ -22,6 +22,14 @@
 * eprintln!()   -> stderr
 * vec![]        -> Vec::new()
 * format!       -> Strings
+* panic!()
 [tests]
 * assert!()
 * assert_eq()
+
+## Result() and Option Management
+* unwrap()                      -> panic! if err
+* unwrap_or_else(callback)      -> manages panic! if err
+* unwrap_or()                   -> manages panic! if err
+* expect()                      -> modify panic!
+* is_err()                      -> true if err, false if ok
