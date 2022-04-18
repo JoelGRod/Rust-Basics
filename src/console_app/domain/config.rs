@@ -1,6 +1,9 @@
+use std::env;
+
 pub struct Config {
     pub query: String,
     pub filename: String,
+    pub case_sensitive: bool,
 }
 
 impl Config {
@@ -10,7 +13,12 @@ impl Config {
         }
         let query = args[1].clone();
         let filename: String = args[2].clone();
+        let case_sensitive: bool = env::var("CASE_INSENSITIVE").is_err();
 
-        Ok(Self {query, filename})
+        Ok(Self {
+            query, 
+            filename,
+            case_sensitive
+        })
     }
 }

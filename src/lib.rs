@@ -51,11 +51,16 @@ pub fn run_console_app(config: Config) -> Result<(), Box<dyn Error>> {
     let contents: String = fs::read_to_string(path + &config.filename)?;
 
     // println!("With Text: {}", contents);
-
-    for line in helpers::search(&config.query, &contents) {
+    let results: Vec<&str> = if config.case_sensitive {
+        helpers::search(&config.query, &contents)
+    } else {
+        helpers::search_case_insensitive(&config.query, &contents)
+    };
+    
+    for line in results {
         println!("{}", line);
     }
-
+    
     Ok(())
 }
 
