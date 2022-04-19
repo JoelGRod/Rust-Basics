@@ -2,6 +2,8 @@
 mod basics;
 mod exercises;
 pub mod console_app;
+mod advanced;
+
 
 // Imports: Basics Domain
 use crate::basics::{
